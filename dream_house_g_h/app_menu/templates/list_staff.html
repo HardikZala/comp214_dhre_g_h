@@ -1,0 +1,41 @@
+{% extends "master.html" %}
+
+{% block title%}
+    Staff List
+{% endblock %}
+
+{% block content %}
+    <h1>Staff List</h1>
+    <table border="1">
+        <tr>
+            <th>Staff No. </th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Position</th>
+            <th>Sex</th>
+            <th>Date of Birth</th>
+            <th>Salary</th>
+            <th>Branch No</th>
+            <th>Telephone</th>
+            <th>Mobile</th>
+            <th>Email</th>
+        </tr>
+
+        {% for staff in staffs %}
+            <tr>
+                <td>{{ staff.staffno }}</td>
+                <td>{{ staff.fname }}</td>
+                <td>{{ staff.lname }}</td>
+                <td>{{ staff.position }}</td>
+                <td> {{ staff.sex }}</td>
+                <td>{{ staff.dob }}</td>
+                <td>{{ staff.salary }}</td>
+                <td>{{ staff.branchno }}</td>
+                <td>{{ staff.telephone }}</td>
+                <td>{{ staff.mobile }}</td>
+                <td>{{ staff.email }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    
+{% endblock %}
