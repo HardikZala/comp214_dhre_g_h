@@ -1,0 +1,37 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block title %}
+  Branch List
+{% endblock %}
+
+{% block content %}
+  {% include 'nav.html' %}
+
+  <div class="container text-center d-flex justify-content-center align-items-center mt-5">
+    <div class="row ">
+      <div class="col-md-12">
+        <h1>Branch List</h1>
+      </div>
+      <div class="col-md-12">
+        <table class=" d-flex justify-content-center align-items-center mt-5 table table-bordered table-responsive table-striped">
+          <tr>
+            <th>Branch No.</th>
+            <th>Street</th>
+            <th>City</th>
+            <th>Postal Code</th>
+          </tr>
+
+          {% for branch in branches%}
+            <tr>
+              <td>{{ branch.branchno }}</td>
+              <td>{{ branch.street }}</td>
+              <td>{{ branch.city }}</td>
+              <td>{{ branch.postcode }}</td>
+            </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+  </div>
+{% endblock %}
