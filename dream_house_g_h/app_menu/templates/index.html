@@ -1,9 +1,38 @@
 {% extends 'master.html' %}
-
+{% load static%}
 {% block title %}
   Home
 {% endblock %}
 
+
+
 {% block content %}
-  <h1>Dream Home Real Estate Application</h1>
+{% include 'nav.html'%}
+  
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="row">
+
+            <div class="col-md-12">
+                <h1 class="text-center">Welcome to Dream Home Real Estate</h1>
+            </div>
+
+            <div class="col-md-12 mt-5">
+                <p class="text-center">
+                    We are the best real estate company in the world. 
+                    We provide the best services to our clients. 
+                    We have the best agents who are always ready to help you. 
+                    We have the best houses, apartments, and lands for sale. 
+                    We also have the best houses, apartments, and lands for rent. 
+                </p>
+            </div>
+
+            <div class="col-md-12">
+                <img src="{% static 'imgs/logo.png' %}" class="mx-auto d-block w-30" alt="Dream Home Real Estate">
+            </div>
+        
+        </div>
+    </div>
+
+
+
 {% endblock %}

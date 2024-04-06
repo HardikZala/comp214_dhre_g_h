@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from .models import Staff
+from .models import *
 
 # Create your views here.
 
@@ -16,3 +16,23 @@ def list_staff(request):
         'staffs': staffs
     }
     return HttpResponse(template.render(context, request))
+
+def list_branch(request):
+    branches = Branch.objects.all().values()
+    template = loader.get_template('list_branch.html')
+    context={
+        'branches': branches
+    }
+    return HttpResponse(template.render(context, request))
+
+def list_clients(request):
+    clients = Client.objects.all().values()
+    template = loader.get_template('list_clients.html')
+    context={
+        'clients': clients
+    }
+    return HttpResponse(template.render(context, request))
+
+def hire_staff(request):
+    template = loader.get_template('hire_staff.html')
+    return HttpResponse(template.render())

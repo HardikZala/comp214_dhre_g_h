@@ -27,3 +27,20 @@ class Branch(models.Model):
 
     class Meta:
         db_table = 'DH_BRANCH'
+
+
+
+class Client(models.Model):
+    clientno = models.AutoField(primary_key=True)
+    fname = models.CharField(max_length=50)
+    lname = models.CharField(max_length=50)
+    telno = models.DecimalField(max_digits=8, decimal_places=2)
+    street = models.CharField(max_length=50)
+    city = models.CharField(max_length=50)
+    email = models.CharField(max_length=50)
+    preftype = models.CharField(max_length=50)
+    maxrent = models.DecimalField(max_digits=8, decimal_places=2)
+
+    class Meta:
+        db_table = 'DH_CLIENT'
+

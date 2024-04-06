@@ -1,0 +1,59 @@
+{% load static %}
+{% comment %} Boot strap navigation Menu with 3 Drop-down buttons and a logo to the left{% endcomment %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light position-relative z-0 shadow shadow-md ">
+    {% comment %} href={% url 'home' %} {% endcomment %}
+    <a class="navbar-brand" href=""><img src="{% static 'imgs/logo.png' %}" alt="Logo" style="margin-left:20px; width: 50px; height: 50px;"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Staff Main Menu
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {% comment %} Hiring Staff Form {% endcomment %}
+                    <li><a class="dropdown-item" href="{% url 'hire_staff'%}">Hire Staff</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    {% comment %} List/Update Staff Form {% endcomment %}
+                    <li><a class="dropdown-item" href="{% url 'list_staff'%}">List/Update Staff</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Branch Main Menu
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {% comment %} Identify Branch Address Form {% endcomment %}
+                    <li><a class="dropdown-item" href="#">Look Up Branch Address</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    {% comment %} List/Update Branch Address Form {% endcomment %}
+                    <li><a class="dropdown-item" href="{% url 'list_branch'%}">List/Update Branch Address</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-right: 20px !important">
+                    Client Main Menu
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {% comment %} Client Registration Form {% endcomment %}
+                    <li><a class="dropdown-item" href="#">Register Client</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    {% comment %} List/Update Client Form {% endcomment %}
+                    <li><a class="dropdown-item" href="{% url 'list_clients'%}">List/Update Client</a></li>
+                </ul>
+            </li>
+            
+        </ul>
+    </div>
+</nav>
+
+
+
+
+    
+
