@@ -1,0 +1,43 @@
+{% extends 'master.html' %}
+
+{% block title %}
+  Staff Menu
+{% endblock %}
+
+{% block content %}
+  <h1>Staff Menu</h1>
+
+  <form method="post" action="{% url 'staff_menu' %}">
+    {% csrf_token %}
+    <label for="FNAME">First Name:</label>
+    <input type="text" name="FNAME" id="FNAME" required />
+
+    <label for="LNAME">Last Name:</label>
+    <input type="text" name="LNAME" id="LNAME" required />
+
+    <label for="POSITION">Position:</label>
+    <input type="text" name="POSITION" id="POSITION" required />
+
+    <label for="DOB">Date of Birth:</label>
+    <input type="date" name="DOB" id="DOB" required />
+
+    <label for="SALARY">Salary:</label>
+    <input type="number" name="SALARY" id="SALARY" required />
+
+    <label for="BRANCHNO">Branch No:</label>
+    <input type="text" name="BRANCHNO" id="BRANCHNO" required />
+
+    <label for="TELEPHONE">Telephone:</label>
+    <input type="tel" name="TELEPHONE" id="TELEPHONE" required />
+
+    <label for="MOBILE">Mobile:</label>
+    <input type="tel" name="MOBILE" id="MOBILE" required />
+
+    <label for="EMAIL">Email:</label>
+    <input type="email" name="EMAIL" id="EMAIL" required />
+
+    <button type="submit">Submit</button>
+    <button type="cancel">Cancel</button>
+</form>
+
+{% endblock %}

@@ -22,6 +22,8 @@
         </tr>
 
         {% for staff in staffs %}
+        <form  action="{% url 'update_staff' %}" method="post">
+            {% csrf_token %}
             <tr>
                 <td>{{ staff.staffno }}</td>
                 <td>{{ staff.fname }}</td>
@@ -29,11 +31,13 @@
                 <td>{{ staff.position }}</td>
                 <td> {{ staff.sex }}</td>
                 <td>{{ staff.dob }}</td>
-                <td>{{ staff.salary }}</td>
+                <td><input type="number" name="salary-{{ staff.staffno }}" value="{{ staff.salary }}" /></td>
                 <td>{{ staff.branchno }}</td>
-                <td>{{ staff.telephone }}</td>
-                <td>{{ staff.mobile }}</td>
-                <td>{{ staff.email }}</td>
+                <td><input type="text" name="telephone-{{ staff.staffno }}" value="{{ staff.telephone }}" /></td>
+                <td><input type="text" name="mobile-{{ staff.staffno }}" value="{{ staff.mobile }}" /></td>
+                <td><input type="email" name="email-{{ staff.staffno }}" value="{{ staff.email }}" /></td>
+                <td><button type="submit">Save</button></td>
+                <input type="hidden" name="staffno" value="{{ staff.staffno }}" />
             </tr>
         {% endfor %}
     </table>

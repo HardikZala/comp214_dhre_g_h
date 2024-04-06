@@ -6,4 +6,13 @@
 
 {% block content %}
   <h1>Dream Home Real Estate Application</h1>
+  <div class="menu-box">
+    <a href="{% url 'staff_menu' %}">Staff</a>
+</div>
+<div class="menu-box">
+    <a href="{% url 'branch_menu' %}">Branch</a>
+</div>
+<div class="menu-box">
+    <a href="{% url 'client_menu' %}">Client</a>
+</div>
 {% endblock %}
