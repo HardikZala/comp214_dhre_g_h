@@ -4,6 +4,7 @@ Activate env:
 
 Navigate to Django project:
 <br>\> cd dream_house_g_h
+<br>
 dream_house_g_h> py manage.py runserver
 
 Open browser:
