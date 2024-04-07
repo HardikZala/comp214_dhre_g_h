@@ -57,7 +57,24 @@ def hire_staff(request):
         staff.hire_staff(staffno, fname, lname, position,sex, dob, salary, branchno, telephone, mobile, email)
         return render(request, 'hire_staff.html')
     return render(request, 'hire_staff.html')
-        
+
+def register_client(request):
+    template = loader.get_template('register_client.html')
+    if request.method == 'POST':
+        clientno = request.POST['clientno']
+        fname = request.POST['fname']
+        lname = request.POST['lname']
+        telno = request.POST['telno']
+        street = request.POST['street']
+        city = request.POST['city']
+        email = request.POST['email']
+        preftype = request.POST['preftype']
+        maxrent = request.POST['maxrent']
+
+        client = Client()
+        client.register_client(clientno, fname, lname, telno, street, city, email, preftype, maxrent)
+        return render(request, 'register_client.html')
+    return render(request, 'register_client.html')
 
 def update_staff(request):
     print(request.POST)

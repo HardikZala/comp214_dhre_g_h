@@ -24,8 +24,7 @@ class Staff(models.Model):
     
     def update_staff(self, staffno, salary, telephone, mobile, email):
         with connection.cursor() as cursor:
-            cursor.callproc('update_staff_sp', [staffno, salary, telephone, mobile, email])
-        
+            cursor.callproc('update_staff_sp', [staffno, salary, telephone, mobile, email])     
 
     class Meta:
         db_table = 'DH_STAFF'
@@ -46,12 +45,16 @@ class Client(models.Model):
     clientno = models.AutoField(primary_key=True)
     fname = models.CharField(max_length=50)
     lname = models.CharField(max_length=50)
-    telno = models.DecimalField(max_digits=8, decimal_places=2)
+    telno = models.CharField(max_length=20)
     street = models.CharField(max_length=50)
     city = models.CharField(max_length=50)
     email = models.CharField(max_length=50)
     preftype = models.CharField(max_length=50)
     maxrent = models.DecimalField(max_digits=8, decimal_places=2)
+
+    def register_client(self, clientno, fname, lname, telno, street, city, email, preftype, maxrent):
+        with connection.cursor() as cursor:
+            cursor.callproc('register_client_sp', [clientno, fname, lname, telno, street, city, email, preftype, maxrent])
 
     class Meta:
         db_table = 'DH_CLIENT'
